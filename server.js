@@ -33,9 +33,9 @@ app.get('/api/users/:id', (req, res) => {
 
 // PUT update user - Error: Undefined variable
 app.put('/api/users/:id', (req, res) => {
-  let { id } = req.params;
-  let { name, email } = req.body;
-  let userIndex = users.findIndex(u => u.id === parseInt(id));
+  var { id } = req.params;
+  var { name, email } = req.body;
+  var userIndex = users.findIndex(u => u.id === parseInt(id));
   
   if (userIndex !== -1) {
     users[userIndex] = { ...users[userIndex], name, email };
